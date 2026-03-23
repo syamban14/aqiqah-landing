@@ -15,12 +15,8 @@ const firebaseConfig = {
 };
 
 // Cek apakah user sudah mengisi config atau belum
-export const isConfigured = firebaseConfig.apiKey !== "AIzaSyDsDW9wIEsu3o_oRIhwsMOMoYTLrvefZBw";
+export const isConfigured = true;
 
-let app, db;
-if (isConfigured) {
-  app = initializeApp(firebaseConfig);
-  db = getFirestore(app);
-}
+const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
 
-export { db };
