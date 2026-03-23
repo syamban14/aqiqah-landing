@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Aaliyah's Aqiqah Celebration</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+<body class="bg-surface selection:bg-primary-container selection:text-on-primary-container">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 glass-nav shadow-[0_10px_40px_0_rgba(26,28,26,0.04)]">
+        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+            <div class="font-headline italic text-2xl text-primary">Aaliyah's Aqiqah</div>
+            <div class="hidden md:flex gap-8 items-center font-headline tracking-tighter text-lg text-primary">
+                <a class="text-primary/70 hover:text-primary transition-colors" href="#details">Event Details</a>
+                <a class="text-primary/70 hover:text-primary transition-colors" href="#gallery">Photo Gallery</a>
+                <a class="text-primary font-semibold border-b-2 border-primary pb-1" href="#rsvp">RSVP</a>
+            </div>
+            <button class="bg-primary text-on-primary px-6 py-2 rounded-full font-medium scale-95 active:scale-90 transition-transform duration-200">
+                Celebrate
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <header class="pt-32 pb-20 px-6 max-w-7xl mx-auto overflow-hidden">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="order-2 lg:order-1">
+                <span class="inline-block text-secondary font-medium tracking-widest uppercase text-xs mb-4">A Blessed Celebration</span>
+                <h1 class="serif-display text-5xl md:text-7xl text-on-surface leading-[1.1] mb-8 tracking-tighter">
+                    Welcoming <br/>
+                    <span class="italic text-primary">Aaliyah Noor</span> <br/>
+                    to our hearts.
+                </h1>
+                <blockquote class="border-l-2 border-primary-container pl-6 mb-10 italic text-on-surface-variant font-headline text-xl leading-relaxed">
+                    "A child is a gift from the Heavens, a soul to nourish, and a light to guide. Join us as we celebrate the Aqiqah of our beloved daughter."
+                </blockquote>
+                <div class="flex flex-wrap gap-4">
+                    <a class="px-8 py-4 bg-secondary-container text-on-secondary-container rounded-full font-semibold shadow-lg hover:translate-y-[-2px] transition-transform" href="#rsvp">
+                        Confirm Attendance
+                    </a>
+                </div>
+            </div>
+            <div class="order-1 lg:order-2 relative">
+                <div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl relative z-10 rotate-2 hover:rotate-0 transition-transform duration-700">
+                    <img alt="Baby Aaliyah" class="w-full h-full object-cover" data-alt="Beautiful sleeping baby girl wrapped in soft pink lace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANNtr2UyiT6bEzzqRugjOHmR1aczdxqX_FE9OE1nNoxRXVwQR-6waFzu5DwEDUJ55YJyXBW31dX_F9WQeA7DsVYYmCLh7rnIOPR0AbmKH06gN9pQ7s5SDipv7hJcehU-zpLIX-hzccz43mGWLCAwYT3H6EH_WvXLYgcnrOZzM9q8fasviYKXgXyCUPtX8ews0wp3rUn0i_TG6S47i0o7wnQ-KdUckb3LwT-1BPCtANNBJKq7suZDtB6F4sUisCJfmgwCH8kUbbm7w"/>
+                </div>
+                <!-- Artistic Elements -->
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-primary-container/30 rounded-full blur-3xl -z-10"></div>
+                <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-secondary-container/20 rounded-full blur-3xl -z-10"></div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Event Details Section -->
+    <section class="py-24 bg-surface-container-low rounded-t-[3rem]" id="details">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="serif-display text-4xl text-on-surface mb-4">The Gathering</h2>
+                <div class="w-16 h-0.5 bg-primary-container mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Date & Time -->
+                <div class="bg-surface-container-lowest p-10 rounded-lg text-center group hover:bg-primary transition-colors duration-500">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-4 group-hover:text-on-primary" data-icon="calendar_today">calendar_today</span>
+                    <h3 class="serif-display text-2xl mb-2 group-hover:text-on-primary">Date &amp; Time</h3>
+                    <p class="text-on-surface-variant group-hover:text-on-primary/80">Saturday, October 26th<br/>11:00 AM — 3:00 PM</p>
+                </div>
+                <!-- Venue -->
+                <div class="bg-surface-container-lowest p-10 rounded-lg text-center group hover:bg-primary transition-colors duration-500">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-4 group-hover:text-on-primary" data-icon="location_on">location_on</span>
+                    <h3 class="serif-display text-2xl mb-2 group-hover:text-on-primary">The Venue</h3>
+                    <p class="text-on-surface-variant group-hover:text-on-primary/80">The Heirloom Gallery<br/>42 Rosewood Avenue</p>
+                </div>
+                <!-- Dress Code -->
+                <div class="bg-surface-container-lowest p-10 rounded-lg text-center group hover:bg-primary transition-colors duration-500">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-4 group-hover:text-on-primary" data-icon="checkroom">checkroom</span>
+                    <h3 class="serif-display text-2xl mb-2 group-hover:text-on-primary">Dress Code</h3>
+                    <p class="text-on-surface-variant group-hover:text-on-primary/80">Soft Pastels or Whites<br/>Semi-Formal Elegance</p>
+                </div>
+            </div>
+            <!-- Location Map -->
+            <div class="mt-12 rounded-lg overflow-hidden h-[400px] shadow-sm grayscale hover:grayscale-0 transition-all duration-700">
+                <img alt="Venue Map Location" class="w-full h-full object-cover" data-alt="Abstract aerial view map of an elegant neighborhood" data-location="The Heirloom Gallery, London" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAivFc4XlNXJ9z43X7CmRq7rEmjcyOL4Su6eCw1FdomgocvPOuadTf7TR2Av0zhjdPwJxWWF5Z9j4K-8xW6UPw3kJYnMINTOgv-GWTSQ9A96BZh7ReUpB9rDLwl7mvxGN7nm6YTuWDL6OmdsKV4Rq6Ml3qFiMsGF73x_6XBq10DQo-Qsa5nn6toT_Dr8DpuMqakOgqI9TY_tzY1a98sNTs24sAmaGJUmqbp6f-6WWUu6ncrwZMurZajWMdU8QWuNXHa1cCjKIATnL0"/>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Photo Gallery: Bento Grid Style -->
+    <section class="py-24 bg-surface" id="gallery">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="serif-display text-4xl text-on-surface mb-2">Happiness Captured</h2>
+                    <p class="text-on-surface-variant">The first few chapters of Aaliyah's journey.</p>
+                </div>
+                <div class="hidden md:block">
+                    <span class="material-symbols-outlined text-primary-container text-5xl" data-icon="favorite">favorite</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-[800px]">
+                <div class="md:col-span-2 md:row-span-2 rounded-lg overflow-hidden relative group">
+                    <img alt="Baby Moment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Baby tiny hands holding a soft knitted blanket" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTbz59I1ZM4NPN3UmGx_vtPVx8TU3ElqoppTKqzTaocNdZalkWpqJIRffoDQSSw4Pv-_pCSpgMVtSLQeig9fPdv435-4cVtt0muh3QW1U7ZfRwy5CTTbCB_JbJa_N80yyrGpao3NHmmI1Rma90pWnlbY7667XVWeaxjsKWJEQrLn-fdPpZspScf5knbavqfHpMXpZcJMfrHGMIQHJegkZCI61bgxPzmP0OgSsWFnCnEADpdduAAar8rpTasgUHgYHoQ4MOgCHEu0E"/>
+                    <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+                <div class="md:col-span-2 rounded-lg overflow-hidden relative group">
+                    <img alt="Baby Smile" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Close up of a sleeping baby in a floral cradle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe0lO0vJbC8N08SFii08HkOch41s7UE1wtLL5Wgb5Z4nFx5EhyA3dzmfCvhwkGsW6X4ImjMVM0cETN0DajWdLKhzwKdoiOzd_xj4f_6WbMgncY5OFSB6zyRMpyKArKzGHSmOnIG9k-cia7CQFuLQNs2QTFHk_7SP28HkOruJ9NO7n4taCwIZwyf-NoCugRKbG-nt0SZIhKlQDdQVw3P1dC9sq-mRpKhtdcu8SguGMQxJWc3z52sYdAWGBVZoOUU2vLdeQc2Z0hVzU"/>
+                </div>
+                <div class="rounded-lg overflow-hidden relative group">
+                    <img alt="Baby Detail" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Baby feet with tiny pink socks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5v39cvK8TcNVHZ3IaH53xyxyhINUJ369_0_9bHXrQELKbNaCGTHTZrlz_ap6cz-Cz6BYjggnGUwpqnwIxnctEP3pdGm5KmXHEZBsDfMkOZKrY-Qqk4fdvtLfs58CLTz4SKIU2imwe3P7EqhoEwq6-6PbUltDNH9Kr1RYazP-DJA5GoPIW6Ie4zKJybuN7e03GU8NvsRaGhX-xGqwHaGi46c9Q6BHTPpNdrHPUMzav6q7k8UmzIzJN7FjJmZ2N2qAH9beAfJ4l6p8"/>
+                </div>
+                <div class="rounded-lg overflow-hidden relative group">
+                    <img alt="Family Joy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Soft focused photo of parents hands cradling a baby" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5hJw_dXbnbh5s9ot6mZ1HVLEDg7T9a-NsFj06yFLmsA_miuGfT80ODmh8g77j4PCHawnjMCMEP-PrNKEJRH1YkXtfSsONUuuW2eDgwLXtStJl99W7epIAEzKFSu4RXlWUiz2zcJ5-aB9dr-irsmGCpBETJVIh5fyR1jnXKz0WVVOiMz2krzm_qZomsgXhPpKgQS8uS2NFgmGXOhhs8wImf4-JOOBuGipV69mOcaEug3lAA-TaRVxyJYBxVU0qKwUJ5-CFqyMy4Ww"/>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- RSVP & Wishes Section -->
+    <section class="py-24 bg-surface-container-low rounded-b-[3rem]" id="rsvp">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20">
+            <!-- RSVP Form -->
+            <div class="bg-surface-container-lowest p-12 rounded-lg shadow-sm">
+                <h2 class="serif-display text-3xl mb-8">Kindly RSVP</h2>
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-on-surface-variant mb-2">Guest Name</label>
+                        <input class="w-full bg-surface-container-low border-none rounded-full px-6 py-4 focus:ring-2 focus:ring-primary-container" placeholder="Your full name" type="text"/>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-on-surface-variant mb-2">Number of Guests</label>
+                            <select class="w-full bg-surface-container-low border-none rounded-full px-6 py-4 focus:ring-2 focus:ring-primary-container">
+                                <option>1 Guest</option>
+                                <option>2 Guests</option>
+                                <option>3 Guests</option>
+                                <option>4+ Guests</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-on-surface-variant mb-2">Attending?</label>
+                            <select class="w-full bg-surface-container-low border-none rounded-full px-6 py-4 focus:ring-2 focus:ring-primary-container">
+                                <option>Joyfully Accept</option>
+                                <option>Regretfully Decline</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-on-surface-variant mb-2">Dietary Preferences</label>
+                        <input class="w-full bg-surface-container-low border-none rounded-full px-6 py-4 focus:ring-2 focus:ring-primary-container" placeholder="e.g. Vegetarian, Nut Allergy" type="text"/>
+                    </div>
+                    <button class="w-full bg-primary text-on-primary py-4 rounded-full font-bold text-lg hover:bg-primary/90 transition-colors" type="submit">
+                        Confirm Attendance
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Wishes & Prayers -->
+            <div class="flex flex-col justify-center">
+                <div class="mb-10">
+                    <h2 class="serif-display text-3xl mb-4">Wishes &amp; Prayers</h2>
+                    <p class="text-on-surface-variant text-lg">Your messages and prayers will be kept in a special heirloom book for Aaliyah to read when she grows up.</p>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-surface-container-lowest/50 p-6 rounded-lg border-l-4 border-primary-container">
+                        <p class="italic text-on-surface mb-2">"May your life be filled with endless laughter and the brightest stars. Welcome to the world, sweet Aaliyah."</p>
+                        <span class="text-sm font-bold text-primary">— Auntie Sarah &amp; Uncle Omar</span>
+                    </div>
+                    <div class="bg-surface-container-lowest/50 p-6 rounded-lg border-l-4 border-secondary-container">
+                        <p class="italic text-on-surface mb-2">"A beautiful gift from Allah. Wishing you a lifetime of health, happiness, and iman."</p>
+                        <span class="text-sm font-bold text-primary">— The Mansour Family</span>
+                    </div>
+                    <button class="flex items-center gap-2 text-primary font-bold hover:underline">
+                        <span class="material-symbols-outlined" data-icon="add_comment">add_comment</span>
+                        Leave a prayer for Aaliyah
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-surface-container-low w-full rounded-t-[2rem]">
+        <div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8 w-full max-w-7xl mx-auto">
+            <div class="font-headline text-xl text-primary">Aaliyah's Aqiqah</div>
+            <div class="font-body text-sm leading-relaxed tracking-wide flex gap-8">
+                <a class="text-primary/60 hover:text-secondary transition-colors" href="#">Contact Us</a>
+                <a class="text-primary/60 hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+                <a class="text-primary/60 hover:text-secondary transition-colors" href="#">Location</a>
+            </div>
+            <p class="font-body text-sm text-primary/60">© 2024 The Heirloom Gallery. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
