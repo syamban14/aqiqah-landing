@@ -193,16 +193,16 @@
             <!-- Form Ucapan -->
             <div class="bg-surface-container-lowest p-8 md:p-12 rounded-lg shadow-sm">
                 <h2 class="serif-display text-3xl mb-8">Kirim Ucapan &amp; Doa</h2>
-                <form class="space-y-6">
+                <form id="ucapan-form" class="space-y-6">
                     <div>
                         <label class="block text-sm font-medium text-on-surface-variant mb-2">Nama Anda</label>
-                        <input
+                        <input id="nama-input"
                             class="w-full bg-surface-container-low border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary-container"
                             placeholder="Tuliskan nama Anda" type="text" required />
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-on-surface-variant mb-2">Ucapan &amp; Doa</label>
-                        <textarea rows="4"
+                        <textarea id="pesan-input" rows="4"
                             class="w-full bg-surface-container-low border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary-container"
                             placeholder="Tuliskan harapan dan doa untuk Naysila..." required></textarea>
                     </div>
@@ -221,7 +221,7 @@
                     <p class="text-on-surface-variant text-lg">Your messages and prayers will be kept in a special
                         heirloom book for Naysila to read when she grows up.</p>
                 </div>
-                <div class="space-y-6">
+                <div id="wishes-container" class="space-y-6 max-h-[500px] overflow-y-auto pr-2 pb-4">
                     <div class="bg-surface-container-lowest/50 p-6 rounded-lg border-l-4 border-primary-container">
                         <p class="italic text-on-surface mb-2">"May your life be filled with endless laughter and the
                             brightest stars. Welcome to the world, sweet Naysila."</p>
