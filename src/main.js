@@ -46,6 +46,54 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
+    // --- Cover Screen Logic ---
+    const coverScreen = document.getElementById('cover-screen');
+    const coverBg = document.getElementById('cover-bg');
+    const coverTop = document.getElementById('cover-top');
+    const coverBottom = document.getElementById('cover-bottom');
+    const coverContent = document.getElementById('cover-content');
+    const btnOpenCover = document.getElementById('btn-open-cover');
+    const bgm = document.getElementById('bgm');
+
+    if (btnOpenCover && coverScreen && coverTop && coverBottom) {
+        btnOpenCover.addEventListener('click', () => {
+            // 1. Pudarkan teks dan tombol segera
+            if(coverContent) {
+                coverContent.style.opacity = '0';
+                coverContent.style.transform = 'scale(0.9)';
+                coverContent.style.pointerEvents = 'none';
+            }
+            
+            // 2. Efek Buka Amplop 3D (Flap terbuka ke depan atas)
+            setTimeout(() => {
+                coverTop.style.transform = 'rotateX(150deg)'; 
+                coverBottom.style.transform = 'translateY(100%)';
+                
+                // Setelah tutup amplop terbuka, pudarkan sisa cover screen
+                if(coverBg) {
+                    coverBg.style.opacity = '0';
+                }
+                setTimeout(() => {
+                    coverScreen.style.opacity = '0';
+                    coverScreen.style.pointerEvents = 'none';
+                }, 600);
+            }, 300);
+
+            // Enable scrolling
+            document.body.classList.remove('overflow-hidden');
+            
+            // Try to play background music
+            if (bgm) {
+                bgm.play().catch(err => console.log('BGM Autoplay prevented or file missing:', err));
+            }
+            
+            // Cleanup DOM after animation finishes
+            setTimeout(() => {
+                coverScreen.remove();
+            }, 2500);
+        });
+    }
+
     // --- Firebase Guestbook Logic ---
     const ucapanForm = document.getElementById('ucapan-form');
     const namaInput = document.getElementById('nama-input');

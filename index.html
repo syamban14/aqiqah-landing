@@ -16,7 +16,48 @@
     <link rel="stylesheet" href="./src/style.css">
 </head>
 
-<body class="bg-surface selection:bg-primary-container selection:text-on-primary-container pb-20 md:pb-0">
+<body class="bg-surface selection:bg-primary-container selection:text-on-primary-container pb-20 md:pb-0 overflow-hidden">
+    <!-- Cover Screen -->
+    <div id="cover-screen" class="fixed inset-0 z-[100] flex flex-col justify-center items-center transition-opacity duration-1000" style="perspective: 1200px;">
+        <!-- Latar dasar cover agar tidak bolong saat amplop terbuka -->
+        <div class="absolute inset-0 bg-surface z-10 transition-opacity duration-1000 delay-500" id="cover-bg"></div>
+
+        <!-- Bingkai Amplop Atas (Flap) -->
+        <div id="cover-top" class="absolute top-0 left-0 w-full h-1/2 bg-surface-container-lowest transition-transform duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)] overflow-hidden z-20 border-b border-primary/20 shadow-[0_15px_30px_rgba(0,0,0,0.05)] origin-top" style="backface-visibility: hidden;">
+             <div class="absolute top-0 right-0 w-64 h-64 bg-primary-container/30 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+             <!-- Aksen lengkungan (optional) -->
+             <div class="absolute bottom-[-50px] left-1/2 transform -translate-x-1/2 w-[150%] h-[100px] bg-surface-container-lowest rounded-b-[100%] shadow-lg border-b border-primary/20"></div>
+        </div>
+        
+        <!-- Bingkai Amplop Bawah (Body Amplop) -->
+        <div id="cover-bottom" class="absolute bottom-0 left-0 w-full h-1/2 bg-surface-container-lowest transition-transform duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)] overflow-hidden z-20 border-t border-primary/10 shadow-[0_-15px_30px_rgba(0,0,0,0.05)] origin-bottom">
+             <div class="absolute bottom-0 left-0 w-80 h-80 bg-secondary-container/20 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
+        </div>
+        
+        <!-- Konten Undangan -->
+        <div id="cover-content" class="relative z-30 text-center px-6 transition-all duration-700 ease-in-out pointer-events-none w-full flex flex-col items-center">
+            <div class="pointer-events-auto flex flex-col items-center">
+                <p class="text-secondary font-medium tracking-widest uppercase text-xs mb-4">The Aqiqah of</p>
+                <h1 class="serif-display text-5xl md:text-7xl text-primary mb-4 leading-tight">Naysila Nadine</h1>
+                <p class="text-on-surface-variant font-medium text-lg mb-12">"Cila"</p>
+                
+                <div class="mb-12">
+                    <p class="text-xs text-on-surface-variant uppercase tracking-widest mb-2">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+                    <p class="font-headline text-2xl text-on-surface font-semibold">Tamu Undangan</p>
+                </div>
+                
+                <button id="btn-open-cover" class="flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-primary/90 transition-all hover:-translate-y-1 shadow-lg shadow-primary/30">
+                    <span class="material-symbols-outlined" data-icon="drafts">drafts</span>
+                    Buka Undangan
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Audio -->
+    <audio id="bgm" loop>
+        <source src="/bgm.mp3" type="audio/mpeg">
+    </audio>
     <!-- TopNavBar -->
     <nav class="hidden md:block fixed top-0 w-full z-50 glass-nav shadow-[0_10px_40px_0_rgba(26,28,26,0.04)]">
         <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
@@ -79,9 +120,8 @@
             <div class="order-1 lg:order-2 relative">
                 <div
                     class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl relative z-10 rotate-2 hover:rotate-0 transition-transform duration-700">
-                    <img alt="Baby Aaliyah" class="w-full h-full object-cover"
-                        data-alt="Beautiful sleeping baby girl wrapped in soft pink lace"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuANNtr2UyiT6bEzzqRugjOHmR1aczdxqX_FE9OE1nNoxRXVwQR-6waFzu5DwEDUJ55YJyXBW31dX_F9WQeA7DsVYYmCLh7rnIOPR0AbmKH06gN9pQ7s5SDipv7hJcehU-zpLIX-hzccz43mGWLCAwYT3H6EH_WvXLYgcnrOZzM9q8fasviYKXgXyCUPtX8ews0wp3rUn0i_TG6S47i0o7wnQ-KdUckb3LwT-1BPCtANNBJKq7suZDtB6F4sUisCJfmgwCH8kUbbm7w" />
+                    <img alt="Hero Naysila" class="w-full h-full object-cover" data-alt="Foto bayi Naysila"
+                        src="/hero-image.png" />
                 </div>
                 <!-- Artistic Elements -->
                 <div class="absolute -top-10 -right-10 w-40 h-40 bg-primary-container/30 rounded-full blur-3xl -z-10">
@@ -92,6 +132,70 @@
             </div>
         </div>
     </header>
+
+    <!-- Baby Introduction Section -->
+    <section class="pb-24 bg-surface relative overflow-hidden" id="intro">
+        <!-- Decoration -->
+        <div
+            class="absolute top-10 right-0 w-64 h-64 bg-primary-container/20 rounded-full blur-3xl -z-10 transform translate-x-1/2">
+        </div>
+        <div
+            class="absolute bottom-10 left-0 w-80 h-80 bg-secondary-container/20 rounded-full blur-3xl -z-10 transform -translate-x-1/4">
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <span class="inline-block text-secondary font-medium tracking-widest uppercase text-xs mb-4">Kabar
+                Bahagia</span>
+            <h2 class="serif-display text-3xl md:text-4xl text-on-surface mb-6 leading-relaxed">
+                Alhamdulillah, telah lahir ke dunia putri kedua kami
+            </h2>
+            <div class="w-16 h-0.5 bg-primary/30 mx-auto mb-10"></div>
+
+            <div
+                class="bg-surface-container-lowest p-8 md:p-12 rounded-3xl shadow-sm border border-primary/5 relative z-10 transition-transform hover:-translate-y-1 duration-500">
+                <h3 class="serif-display text-4xl mt-2 text-primary mb-2">Naysila Nadine Maryam Azzahra</h3>
+                <p class="text-on-surface-variant font-medium text-lg mb-10">"Cila"</p>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12">
+                    <div
+                        class="flex flex-col items-center p-5 bg-surface-container-low rounded-2xl group hover:bg-primary transition-colors">
+                        <span
+                            class="material-symbols-outlined text-secondary text-3xl mb-3 group-hover:text-on-primary">calendar_month</span>
+                        <span
+                            class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-1 group-hover:text-on-primary/80">Tanggal</span>
+                        <span class="font-semibold text-on-surface group-hover:text-on-primary">5 Feb 2026</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center p-5 bg-surface-container-low rounded-2xl group hover:bg-primary transition-colors">
+                        <span
+                            class="material-symbols-outlined text-secondary text-3xl mb-3 group-hover:text-on-primary">schedule</span>
+                        <span
+                            class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-1 group-hover:text-on-primary/80">Pukul</span>
+                        <span class="font-semibold text-on-surface group-hover:text-on-primary">04:00 Subuh</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center p-5 bg-surface-container-low rounded-2xl group hover:bg-primary transition-colors">
+                        <span
+                            class="material-symbols-outlined text-secondary text-3xl mb-3 group-hover:text-on-primary">scale</span>
+                        <span
+                            class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-1 group-hover:text-on-primary/80">Berat</span>
+                        <span class="font-semibold text-on-surface group-hover:text-on-primary">2.9 kg</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center p-5 bg-surface-container-low rounded-2xl group hover:bg-primary transition-colors">
+                        <span
+                            class="material-symbols-outlined text-secondary text-3xl mb-3 group-hover:text-on-primary">straighten</span>
+                        <span
+                            class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-1 group-hover:text-on-primary/80">Panjang</span>
+                        <span class="font-semibold text-on-surface group-hover:text-on-primary">48 cm</span>
+                    </div>
+                </div>
+
+                <p class="text-on-surface-variant italic mb-2">Putri kedua</p>
+                <p class="font-headline text-xl text-primary font-semibold">M. Syamsul &amp; Indri Sekara Octafia</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Event Details Section -->
     <section class="py-24 bg-surface-container-low rounded-t-[3rem]" id="details">
@@ -116,7 +220,8 @@
                     <span class="material-symbols-outlined text-primary text-4xl mb-4 group-hover:text-on-primary"
                         data-icon="location_on">location_on</span>
                     <h3 class="serif-display text-2xl mb-2 group-hover:text-on-primary">The Venue</h3>
-                    <p class="text-on-surface-variant group-hover:text-on-primary/80">Perumahan Bukit Cilegon Asri<br />Jalan Ganesha 2 Blok OE No 04</p>
+                    <p class="text-on-surface-variant group-hover:text-on-primary/80">Perumahan Bukit Cilegon
+                        Asri<br />Jalan Ganesha 2 Blok OE No 04</p>
                 </div>
                 <!-- Dress Code -->
                 <div
@@ -128,15 +233,9 @@
                         Elegance</p>
                 </div>
             </div>
-            <div
-                class="mt-12 rounded-lg overflow-hidden h-[400px] shadow-sm transition-all duration-700">
-                <iframe 
-                    src="https://maps.google.com/maps?q=-6.053778,106.038056&z=16&output=embed" 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
+            <div class="mt-12 rounded-lg overflow-hidden h-[400px] shadow-sm transition-all duration-700">
+                <iframe src="https://maps.google.com/maps?q=-6.053778,106.038056&z=16&output=embed" width="100%"
+                    height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
@@ -161,7 +260,7 @@
                     <img alt="Baby Moment"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         data-alt="Baby tiny hands holding a soft knitted blanket"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTbz59I1ZM4NPN3UmGx_vtPVx8TU3ElqoppTKqzTaocNdZalkWpqJIRffoDQSSw4Pv-_pCSpgMVtSLQeig9fPdv435-4cVtt0muh3QW1U7ZfRwy5CTTbCB_JbJa_N80yyrGpao3NHmmI1Rma90pWnlbY7667XVWeaxjsKWJEQrLn-fdPpZspScf5knbavqfHpMXpZcJMfrHGMIQHJegkZCI61bgxPzmP0OgSsWFnCnEADpdduAAar8rpTasgUHgYHoQ4MOgCHEu0E" />
+                        src="/gallery-1.png" />
                     <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity">
                     </div>
                 </div>
@@ -169,19 +268,19 @@
                     <img alt="Baby Smile"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         data-alt="Close up of a sleeping baby in a floral cradle"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe0lO0vJbC8N08SFii08HkOch41s7UE1wtLL5Wgb5Z4nFx5EhyA3dzmfCvhwkGsW6X4ImjMVM0cETN0DajWdLKhzwKdoiOzd_xj4f_6WbMgncY5OFSB6zyRMpyKArKzGHSmOnIG9k-cia7CQFuLQNs2QTFHk_7SP28HkOruJ9NO7n4taCwIZwyf-NoCugRKbG-nt0SZIhKlQDdQVw3P1dC9sq-mRpKhtdcu8SguGMQxJWc3z52sYdAWGBVZoOUU2vLdeQc2Z0hVzU" />
+                        src="/gallery-2.png" />
                 </div>
                 <div class="rounded-lg overflow-hidden relative group">
                     <img alt="Baby Detail"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         data-alt="Baby feet with tiny pink socks"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5v39cvK8TcNVHZ3IaH53xyxyhINUJ369_0_9bHXrQELKbNaCGTHTZrlz_ap6cz-Cz6BYjggnGUwpqnwIxnctEP3pdGm5KmXHEZBsDfMkOZKrY-Qqk4fdvtLfs58CLTz4SKIU2imwe3P7EqhoEwq6-6PbUltDNH9Kr1RYazP-DJA5GoPIW6Ie4zKJybuN7e03GU8NvsRaGhX-xGqwHaGi46c9Q6BHTPpNdrHPUMzav6q7k8UmzIzJN7FjJmZ2N2qAH9beAfJ4l6p8" />
+                        src="/gallery-3.png" />
                 </div>
                 <div class="rounded-lg overflow-hidden relative group">
                     <img alt="Family Joy"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         data-alt="Soft focused photo of parents hands cradling a baby"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5hJw_dXbnbh5s9ot6mZ1HVLEDg7T9a-NsFj06yFLmsA_miuGfT80ODmh8g77j4PCHawnjMCMEP-PrNKEJRH1YkXtfSsONUuuW2eDgwLXtStJl99W7epIAEzKFSu4RXlWUiz2zcJ5-aB9dr-irsmGCpBETJVIh5fyR1jnXKz0WVVOiMz2krzm_qZomsgXhPpKgQS8uS2NFgmGXOhhs8wImf4-JOOBuGipV69mOcaEug3lAA-TaRVxyJYBxVU0qKwUJ5-CFqyMy4Ww" />
+                        src="/gallery-4.png" />
                 </div>
             </div>
         </div>
