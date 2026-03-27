@@ -50,6 +50,7 @@
         <div id="cover-content"
             class="relative z-30 text-center px-6 transition-all duration-700 ease-in-out pointer-events-none w-full flex flex-col items-center">
             <div class="pointer-events-auto flex flex-col items-center">
+                <div class="text-3xl text-primary/80 mb-3">﷽</div>
                 <p class="text-secondary font-medium tracking-widest uppercase text-xs mb-4">The Aqiqah of</p>
                 <h1 class="serif-display text-3xl md:text-5xl text-primary mb-4 leading-tight">Naysila Nadine Maryam
                     Azzahra</h1>
@@ -80,9 +81,13 @@
             <a class="font-headline italic text-2xl text-primary" href="#home">Aqiqah Naysila</a>
             <div class="flex gap-8 items-center font-headline tracking-tighter text-lg text-primary">
                 <a class="nav-link text-primary/70 hover:text-primary transition-colors border-b-2 border-transparent pb-1"
+                    href="#intro">Profil</a>
+                <a class="nav-link text-primary/70 hover:text-primary transition-colors border-b-2 border-transparent pb-1"
                     href="#details">Detail Acara</a>
                 <a class="nav-link text-primary/70 hover:text-primary transition-colors border-b-2 border-transparent pb-1"
                     href="#gallery">Galeri</a>
+                <a class="nav-link text-primary/70 hover:text-primary transition-colors border-b-2 border-transparent pb-1"
+                    href="#photobooth">Booth</a>
                 <a class="nav-link text-primary/70 hover:text-primary transition-colors border-b-2 border-transparent pb-1"
                     href="#ucapan">Ucapan</a>
             </div>
@@ -96,6 +101,10 @@
     <!-- Mobile Bottom Nav -->
     <nav
         class="md:hidden fixed bottom-0 left-0 w-full z-50 glass-nav border-t border-primary/10 flex justify-around py-2 px-2 pb-safe shadow-[0_-5px_20px_0_rgba(26,28,26,0.05)]">
+        <a href="#intro" class="nav-link flex flex-col items-center text-primary/70 transition-colors p-2">
+            <span class="material-symbols-outlined text-2xl mb-1">face</span>
+            <span class="text-[10px] font-medium tracking-wide">Profil</span>
+        </a>
         <a href="#details" class="nav-link flex flex-col items-center text-primary/70 transition-colors p-2">
             <span class="material-symbols-outlined text-2xl mb-1">calendar_today</span>
             <span class="text-[10px] font-medium tracking-wide">Acara</span>
@@ -103,6 +112,10 @@
         <a href="#gallery" class="nav-link flex flex-col items-center text-primary/70 transition-colors p-2">
             <span class="material-symbols-outlined text-2xl mb-1">photo_library</span>
             <span class="text-[10px] font-medium tracking-wide">Galeri</span>
+        </a>
+        <a href="#photobooth" class="nav-link flex flex-col items-center text-primary/70 transition-colors p-2">
+            <span class="material-symbols-outlined text-2xl mb-1">photo_camera</span>
+            <span class="text-[10px] font-medium tracking-wide">Booth</span>
         </a>
         <a href="#ucapan" class="nav-link flex flex-col items-center text-primary/70 transition-colors p-2">
             <span class="material-symbols-outlined text-2xl mb-1">favorite</span>
@@ -160,6 +173,7 @@
         </div>
 
         <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="text-5xl text-primary/80 mb-6 mt-4">﷽</div>
             <span class="inline-block text-secondary font-medium tracking-widest uppercase text-xs mb-4">Kabar
                 Bahagia</span>
             <h2 class="serif-display text-3xl md:text-4xl text-on-surface mb-6 leading-relaxed">
@@ -209,6 +223,13 @@
 
                 <p class="text-on-surface-variant italic mb-2">Putri kedua</p>
                 <p class="font-headline text-xl text-primary font-semibold">M. Syamsul &amp; Indri Sekar Octafia</p>
+            </div>
+            
+            <!-- Kutipan Ayat Al-Quran -->
+            <div class="mt-20 max-w-2xl mx-auto px-4">
+                <span class="block text-2xl lg:text-3xl text-primary/90 mb-6 font-serif leading-loose" dir="rtl">رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا</span>
+                <p class="italic text-on-surface-variant text-lg">"Ya Tuhan kami, anugerahkanlah kepada kami pasangan kami dan keturunan kami sebagai penyenang hati (kami), dan jadikanlah kami pemimpin bagi orang-orang yang bertakwa."</p>
+                <div class="text-sm text-primary font-bold mt-4 tracking-widest uppercase">— Q.S. Al-Furqan : 74</div>
             </div>
         </div>
     </section>
@@ -298,6 +319,61 @@
             </div>
         </div>
     </section>
+
+    <!-- Photo Booth Section -->
+    <section class="py-24 bg-surface-container-low" id="photobooth">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <span class="material-symbols-outlined text-primary-container text-5xl mb-4">photo_camera</span>
+            <h2 class="serif-display text-4xl text-on-surface mb-4">Capture the Moment</h2>
+            <p class="text-on-surface-variant mb-10 max-w-lg mx-auto">Abadikan momen bahagia Anda di Aqiqah Naysila dengan Photo Booth virtual kami! Bingkai Islami eksklusif akan ditambahkan secara otomatis.</p>
+            <button id="btn-open-booth" class="inline-flex items-center gap-3 bg-primary text-on-primary px-10 py-5 rounded-full font-bold text-lg hover:bg-primary/90 transition-all hover:-translate-y-1 shadow-lg shadow-primary/30">
+                <span class="material-symbols-outlined text-2xl">camera</span>
+                Buka Photo Booth
+            </button>
+        </div>
+    </section>
+
+    <!-- Photo Booth Modal (Fullscreen) -->
+    <div id="booth-modal" class="hidden fixed inset-0 z-[90] bg-surface/95 backdrop-blur-lg flex-col items-center justify-center p-4">
+        <button id="btn-close-booth" class="absolute top-4 right-4 z-50 bg-surface-container-lowest rounded-full p-2 shadow-lg hover:bg-surface-container-low transition-colors">
+            <span class="material-symbols-outlined text-on-surface text-3xl">close</span>
+        </button>
+        
+        <div class="w-full max-w-lg mx-auto flex flex-col items-center">
+            <h3 class="serif-display text-2xl text-primary mb-6">📸 Photo Booth Naysila</h3>
+            
+            <!-- Camera View -->
+            <div id="camera-container" class="relative w-full aspect-square rounded-2xl overflow-hidden shadow-2xl bg-black mb-6">
+                <video id="booth-video" class="w-full h-full object-cover" autoplay playsinline style="transform: scaleX(-1);"></video>
+                <canvas id="booth-canvas" class="hidden"></canvas>
+            </div>
+            
+            <!-- Preview (hidden by default) -->
+            <div id="booth-preview" class="hidden w-full mb-6">
+                <img id="booth-preview-img" class="w-full aspect-square rounded-2xl shadow-2xl object-cover" alt="Photo Booth Result" />
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap justify-center gap-4">
+                <button id="btn-capture" class="flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-primary/90 transition-all shadow-lg">
+                    <span class="material-symbols-outlined">camera</span>
+                    Foto!
+                </button>
+                <button id="btn-retake" class="hidden flex items-center gap-2 bg-surface-container-lowest text-on-surface px-6 py-4 rounded-full font-bold border border-primary/20 hover:bg-surface-container-low transition-all">
+                    <span class="material-symbols-outlined">refresh</span>
+                    Ulangi
+                </button>
+                <button id="btn-download" class="hidden flex items-center gap-2 bg-secondary-container text-on-secondary-container px-6 py-4 rounded-full font-bold hover:opacity-90 transition-all">
+                    <span class="material-symbols-outlined">download</span>
+                    Simpan
+                </button>
+                <button id="btn-whatsapp" class="hidden flex items-center gap-2 bg-[#25D366] text-white px-6 py-4 rounded-full font-bold hover:opacity-90 transition-all">
+                    <span class="material-symbols-outlined">share</span>
+                    Bagikan
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Ucapan & Wishes Section -->
     <section class="py-24 bg-surface-container-low rounded-b-[3rem]" id="ucapan">

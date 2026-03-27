@@ -1,6 +1,7 @@
 import './style.css'
 import { db, isConfigured } from './firebase.js';
 import { collection, addDoc, onSnapshot, query, orderBy, serverTimestamp } from 'firebase/firestore';
+import { initPhotoBooth } from './photobooth.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section[id]');
@@ -45,6 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => {
         observer.observe(section);
     });
+
+    // --- Init Photo Booth ---
+    initPhotoBooth();
 
     // --- Cover Screen Logic ---
     const coverScreen = document.getElementById('cover-screen');
