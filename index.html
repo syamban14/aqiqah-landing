@@ -51,7 +51,7 @@
             class="relative z-30 text-center px-6 transition-all duration-700 ease-in-out pointer-events-none w-full flex flex-col items-center">
             <div class="pointer-events-auto flex flex-col items-center">
                 <div class="text-3xl text-primary/80 mb-3">﷽</div>
-                <p class="text-secondary font-medium tracking-widest uppercase text-xs mb-4">The Aqiqah of</p>
+                <p class="text-secondary font-medium tracking-widest uppercase text-xs mb-4">Tasyakuran Aqiqah</p>
                 <h1 class="serif-display text-3xl md:text-5xl text-primary mb-4 leading-tight">Naysila Nadine Maryam
                     Azzahra</h1>
                 <p class="text-on-surface-variant font-medium text-lg mb-12">"Cila"</p>
@@ -224,11 +224,15 @@
                 <p class="text-on-surface-variant italic mb-2">Putri kedua</p>
                 <p class="font-headline text-xl text-primary font-semibold">M. Syamsul &amp; Indri Sekar Octafia</p>
             </div>
-            
+
             <!-- Kutipan Ayat Al-Quran -->
             <div class="mt-20 max-w-2xl mx-auto px-4">
-                <span class="block text-2xl lg:text-3xl text-primary/90 mb-6 font-serif leading-loose" dir="rtl">رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا</span>
-                <p class="italic text-on-surface-variant text-lg">"Ya Tuhan kami, anugerahkanlah kepada kami pasangan kami dan keturunan kami sebagai penyenang hati (kami), dan jadikanlah kami pemimpin bagi orang-orang yang bertakwa."</p>
+                <span class="block text-2xl lg:text-3xl text-primary/90 mb-6 font-serif leading-loose"
+                    dir="rtl">رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا
+                    لِلْمُتَّقِينَ إِمَامًا</span>
+                <p class="italic text-on-surface-variant text-lg">"Ya Tuhan kami, anugerahkanlah kepada kami pasangan
+                    kami dan keturunan kami sebagai penyenang hati (kami), dan jadikanlah kami pemimpin bagi orang-orang
+                    yang bertakwa."</p>
                 <div class="text-sm text-primary font-bold mt-4 tracking-widest uppercase">— Q.S. Al-Furqan : 74</div>
             </div>
         </div>
@@ -248,7 +252,7 @@
                     <span class="material-symbols-outlined text-primary text-4xl mb-4 group-hover:text-on-primary"
                         data-icon="calendar_today">calendar_today</span>
                     <h3 class="serif-display text-2xl mb-2 group-hover:text-on-primary">Date &amp; Time</h3>
-                    <p class="text-on-surface-variant group-hover:text-on-primary/80">02 April 2026<br />10:00 s/d 14:00
+                    <p class="text-on-surface-variant group-hover:text-on-primary/80">02 April 2026<br />10:00 s/d 17:00
                     </p>
                 </div>
                 <!-- Venue -->
@@ -325,8 +329,10 @@
         <div class="max-w-4xl mx-auto px-6 text-center">
             <span class="material-symbols-outlined text-primary-container text-5xl mb-4">photo_camera</span>
             <h2 class="serif-display text-4xl text-on-surface mb-4">Capture the Moment</h2>
-            <p class="text-on-surface-variant mb-10 max-w-lg mx-auto">Abadikan momen bahagia Anda di Aqiqah Naysila dengan Photo Booth virtual kami! Bingkai Islami eksklusif akan ditambahkan secara otomatis.</p>
-            <button id="btn-open-booth" class="inline-flex items-center gap-3 bg-primary text-on-primary px-10 py-5 rounded-full font-bold text-lg hover:bg-primary/90 transition-all hover:-translate-y-1 shadow-lg shadow-primary/30">
+            <p class="text-on-surface-variant mb-10 max-w-lg mx-auto">Abadikan momen bahagia Anda di Aqiqah Naysila
+                dengan Photo Booth virtual kami! Bingkai Islami eksklusif akan ditambahkan secara otomatis.</p>
+            <button id="btn-open-booth"
+                class="inline-flex items-center gap-3 bg-primary text-on-primary px-10 py-5 rounded-full font-bold text-lg hover:bg-primary/90 transition-all hover:-translate-y-1 shadow-lg shadow-primary/30">
                 <span class="material-symbols-outlined text-2xl">camera</span>
                 Buka Photo Booth
             </button>
@@ -334,40 +340,49 @@
     </section>
 
     <!-- Photo Booth Modal (Fullscreen) -->
-    <div id="booth-modal" class="hidden fixed inset-0 z-[90] bg-surface/95 backdrop-blur-lg flex-col items-center justify-center p-4">
-        <button id="btn-close-booth" class="absolute top-4 right-4 z-50 bg-surface-container-lowest rounded-full p-2 shadow-lg hover:bg-surface-container-low transition-colors">
+    <div id="booth-modal"
+        class="hidden fixed inset-0 z-[90] bg-surface/95 backdrop-blur-lg flex-col items-center justify-center p-4">
+        <button id="btn-close-booth"
+            class="absolute top-4 right-4 z-50 bg-surface-container-lowest rounded-full p-2 shadow-lg hover:bg-surface-container-low transition-colors">
             <span class="material-symbols-outlined text-on-surface text-3xl">close</span>
         </button>
-        
+
         <div class="w-full max-w-lg mx-auto flex flex-col items-center">
             <h3 class="serif-display text-2xl text-primary mb-6">📸 Photo Booth Naysila</h3>
-            
+
             <!-- Camera View -->
-            <div id="camera-container" class="relative w-full aspect-square rounded-2xl overflow-hidden shadow-2xl bg-black mb-6">
-                <video id="booth-video" class="w-full h-full object-cover" autoplay playsinline style="transform: scaleX(-1);"></video>
+            <div id="camera-container"
+                class="relative w-full aspect-square rounded-2xl overflow-hidden shadow-2xl bg-black mb-6">
+                <video id="booth-video" class="w-full h-full object-cover" autoplay playsinline
+                    style="transform: scaleX(-1);"></video>
                 <canvas id="booth-canvas" class="hidden"></canvas>
             </div>
-            
+
             <!-- Preview (hidden by default) -->
             <div id="booth-preview" class="hidden w-full mb-6">
-                <img id="booth-preview-img" class="w-full aspect-square rounded-2xl shadow-2xl object-cover" alt="Photo Booth Result" />
+                <img id="booth-preview-img" class="w-full aspect-square rounded-2xl shadow-2xl object-cover"
+                    alt="Photo Booth Result" />
             </div>
-            
+
             <!-- Action Buttons -->
             <div class="flex flex-wrap justify-center gap-4">
-                <button id="btn-capture" class="flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-primary/90 transition-all shadow-lg">
+                <button id="btn-capture"
+                    class="flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-primary/90 transition-all shadow-lg">
                     <span class="material-symbols-outlined">camera</span>
                     Foto!
                 </button>
-                <button id="btn-retake" class="hidden flex items-center gap-2 bg-surface-container-lowest text-on-surface px-6 py-4 rounded-full font-bold border border-primary/20 hover:bg-surface-container-low transition-all">
+                <button id="btn-retake"
+                    class="hidden flex items-center gap-2 bg-surface-container-lowest text-on-surface px-6 py-4 rounded-full font-bold border border-primary/20 hover:bg-surface-container-low transition-all">
                     <span class="material-symbols-outlined">refresh</span>
                     Ulangi
                 </button>
-                <button id="btn-download" class="hidden flex items-center gap-2 bg-secondary-container text-on-secondary-container px-6 py-4 rounded-full font-bold hover:opacity-90 transition-all">
+                <button id="btn-download"
+                    class="hidden flex items-center gap-2 bg-secondary-container text-on-secondary-container px-6 py-4 rounded-full font-bold hover:opacity-90 transition-all">
                     <span class="material-symbols-outlined">download</span>
                     Simpan
                 </button>
-                <button id="btn-whatsapp" class="hidden flex items-center gap-2 bg-[#25D366] text-white px-6 py-4 rounded-full font-bold hover:opacity-90 transition-all">
+                <button id="btn-whatsapp"
+                    class="hidden flex items-center gap-2 bg-[#25D366] text-white px-6 py-4 rounded-full font-bold hover:opacity-90 transition-all">
                     <span class="material-symbols-outlined">share</span>
                     Bagikan
                 </button>
