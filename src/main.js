@@ -50,6 +50,72 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Init Photo Booth ---
     initPhotoBooth();
 
+    // --- Mobile Gallery Lightbox ---
+    const isMobile = () => window.innerWidth < 768;
+    const lightbox = document.getElementById('gallery-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const lightboxPrev = document.getElementById('lightbox-prev');
+    const lightboxNext = document.getElementById('lightbox-next');
+    const lightboxCounter = document.getElementById('lightbox-counter');
+    const galleryImages = document.querySelectorAll('#gallery .grid img');
+    let currentIndex = 0;
+
+    const openLightbox = (index) => {
+        if (!isMobile() || !lightbox) return;
+        currentIndex = index;
+        updateLightbox();
+        lightbox.classList.remove('hidden');
+        lightbox.classList.add('flex');
+        document.body.classList.add('overflow-hidden');
+    };
+
+    const closeLightbox = () => {
+        lightbox?.classList.add('hidden');
+        lightbox?.classList.remove('flex');
+        document.body.classList.remove('overflow-hidden');
+    };
+
+    const updateLightbox = () => {
+        if (!lightboxImg || !galleryImages.length) return;
+        lightboxImg.src = galleryImages[currentIndex].src;
+        if (lightboxCounter) {
+            lightboxCounter.textContent = `${currentIndex + 1} / ${galleryImages.length}`;
+        }
+    };
+
+    galleryImages.forEach((img, index) => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', () => openLightbox(index));
+    });
+
+    lightboxClose?.addEventListener('click', closeLightbox);
+    lightboxPrev?.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        updateLightbox();
+    });
+    lightboxNext?.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % galleryImages.length;
+        updateLightbox();
+    });
+
+    // Swipe gesture support
+    let touchStartX = 0;
+    lightbox?.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    lightbox?.addEventListener('touchend', (e) => {
+        const diff = touchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                currentIndex = (currentIndex + 1) % galleryImages.length;
+            } else {
+                currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+            }
+            updateLightbox();
+        }
+    }, { passive: true });
+
     // --- Cover Screen Logic ---
     const coverScreen = document.getElementById('cover-screen');
     const coverBg = document.getElementById('cover-bg');
